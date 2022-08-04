@@ -34,3 +34,11 @@ class FileStorage:
             obj_dict = json.load(f)
             # TODO: should this overwrite or insert?
             FileStorage.__objects = obj_dict
+    def classes(self):
+        """Returns a dictionary of valid classes and their references."""
+        from models.base_model import BaseModel
+
+
+        classes = {"BaseModel": BaseModel,
+                   }
+        return classes        
