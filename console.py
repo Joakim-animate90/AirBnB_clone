@@ -7,13 +7,13 @@ class HBNBCommand(cmd.Cmd):
 
     prompt = "(hbnb) "
     
-    def do_quit(self):
+    def do_quit(self,line):
         """
         Exits the program.
         """
         return True
     
-    def do_EOF(self):
+    def do_EOF(self,line):
         """Handles End Of File character.
         """
         print()
