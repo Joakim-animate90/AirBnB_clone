@@ -126,14 +126,14 @@ class HBNBCommand(cmd.Cmd):
                             cast = int
                     else:
                         value = value.replace('"','')
-                        attributes = storage.all()[classname]
+                    attributes = storage.all()[classname]
                     if attribute in attributes:
                         value = attributes[attribute](value)
                     elif cast:
                         try:
                             value = cast(value)
-                            except ValueError:
-                                pass  # fine, stay a string then
+                        except ValueError:
+                            pass  # fine, stay a string then
                     setattr(storage.all()[key], attribute, value)
                     storage.all()[key].save()
 
